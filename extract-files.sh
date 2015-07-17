@@ -24,14 +24,14 @@ function extract() {
 }
 
 
-BASE=../../../vendor/oppo/msm8974-common/proprietary
+BASE=../../../vendor/iuni/msm8974-common/proprietary
 rm -rf $BASE/*
 
 DEVBASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $DEVBASE/*
 
-extract ../../oppo/msm8974-common/proprietary-files-qc.txt $BASE
-extract ../../oppo/msm8974-common/proprietary-files.txt $DEVBASE
+extract ../../iuni/msm8974-common/proprietary-files-qc.txt $BASE
+extract ../../iuni/msm8974-common/proprietary-files.txt $DEVBASE
 extract ../../$VENDOR/$DEVICE/device-proprietary-files.txt $DEVBASE
 
-./../../oppo/msm8974-common/setup-makefiles.sh
+./../../iuni/msm8974-common/setup-makefiles.sh

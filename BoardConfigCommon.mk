@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-# inherit from Oppo common
--include device/oppo/common/BoardConfigCommon.mk
+# inherit from IUNI common
+-include device/iuni/common/BoardConfigCommon.mk
 
 # Include path
-TARGET_SPECIFIC_HEADER_PATH := device/oppo/msm8974-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/iuni/msm8974-common/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -38,12 +38,13 @@ TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/oppo/msm8974-common/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/iuni/msm8974-common/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-TARGET_KERNEL_SOURCE := kernel/oneplus/msm8974
+TARGET_KERNEL_SOURCE := kernel/iuni/msm8974
+TARGET_KERNEL_ARCH := arm
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
@@ -60,23 +61,25 @@ TARGET_QCOM_MEDIA_VARIANT := caf-new
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_DS1_DOLBY_DDP := true
-AUDIO_FEATURE_DISABLED_FM := true
+AUDIO_FEATURE_DISABLED_FM := false
 #AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
+QCOM_BT_USE_SMD_TTY := true
+BLUETOOTH_HCI_USE_MCT := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_CHARGER_RES := device/oppo/msm8974-common/charger/images
+BOARD_CHARGER_RES := device/iuni/msm8974-common/charger/images
 
 # CM Hardware
-BOARD_HARDWARE_CLASS += device/oppo/msm8974-common/cmhw
+BOARD_HARDWARE_CLASS += device/iuni/msm8974-common/cmhw
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-   device/oppo/msm8974-common/sepolicy
+   device/iuni/msm8974-common/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
@@ -96,7 +99,7 @@ BOARD_SEPOLICY_UNION += \
 PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
 
 # Graphics
-BOARD_EGL_CFG := device/oppo/msm8974-common/configs/egl.cfg
+BOARD_EGL_CFG := device/iuni/msm8974-common/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -149,7 +152,7 @@ BOARD_RECOVERY_SWIPE := true
 TARGET_NO_RPC := true
 
 # GPS HAL lives here
-TARGET_GPS_HAL_PATH := device/oppo/msm8974-common/gps
+TARGET_GPS_HAL_PATH := device/iuni/msm8974-common/gps
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Use HW crypto for ODE
@@ -174,4 +177,4 @@ ifneq ($(QCPATH),)
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 endif
 
--include vendor/oppo/msm8974-common/BoardConfigVendor.mk
+-include vendor/iuni/msm8974-common/BoardConfigVendor.mk

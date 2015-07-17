@@ -24,10 +24,10 @@ PRODUCT_COPY_FILES += \\
 EOF
 
 LINEEND=" \\"
-COUNT=`wc -l ../../oppo/msm8974-common/proprietary-files.txt | awk {'print $1'}`
-DISM=`egrep -c '(^#|^$)' ../../oppo/msm8974-common/proprietary-files.txt`
+COUNT=`wc -l ../../iuni/msm8974-common/proprietary-files.txt | awk {'print $1'}`
+DISM=`egrep -c '(^#|^$)' ../../iuni/msm8974-common/proprietary-files.txt`
 COUNT=`expr $COUNT - $DISM`
-for FILE in `egrep -v '(^#|^$)' ../../oppo/msm8974-common/proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../../iuni/msm8974-common/proprietary-files.txt`; do
   COUNT=`expr $COUNT - 1`
   if [ $COUNT = "0" ]; then
     LINEEND=""
@@ -109,7 +109,7 @@ EOF
 EOF
 
 export DEVICE=msm8974-common
-export VENDOR=oppo
+export VENDOR=iuni
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
@@ -135,10 +135,10 @@ PRODUCT_COPY_FILES += \\
 EOF
 
 LINEEND=" \\"
-COUNT=`wc -l ../../oppo/msm8974-common/proprietary-files-qc.txt | awk {'print $1'}`
-DISM=`egrep -c '(^#|^$)' ../../oppo/msm8974-common/proprietary-files-qc.txt`
+COUNT=`wc -l ../../iuni/msm8974-common/proprietary-files-qc.txt | awk {'print $1'}`
+DISM=`egrep -c '(^#|^$)' ../../iuni/msm8974-common/proprietary-files-qc.txt`
 COUNT=`expr $COUNT - $DISM`
-for FILE in `egrep -v '(^#|^$)' ../../oppo/msm8974-common/proprietary-files-qc.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../../iuni/msm8974-common/proprietary-files-qc.txt`; do
   COUNT=`expr $COUNT - 1`
   if [ $COUNT = "0" ]; then
     LINEEND=""
@@ -241,7 +241,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(BOARD_VENDOR),oppo)
+ifeq (\$(BOARD_VENDOR),iuni)
 ifeq (\$(TARGET_BOARD_PLATFORM),msm8974)
 
 ifeq (\$(QCPATH),)
