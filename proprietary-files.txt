@@ -21,9 +21,9 @@ vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
-vendor/lib/libmmcamera_imx214.so
-vendor/lib/libmmcamera_ov5648.so
-vendor/lib/libmmcamera_sony_imx214_eeprom.so
+#vendor/lib/libmmcamera_imx214.so # not available iuni u3
+#vendor/lib/libmmcamera_ov5648.so # not available iuni u3
+#vendor/lib/libmmcamera_sony_imx214_eeprom.so # not available iuni u3
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_tuning.so
@@ -45,4 +45,4 @@ etc/sensor_def_qcomdev.conf
 vendor/lib/libAKM8963.so
 
 # Audio firmware
-etc/firmware/audience-es325-fw.bin
+#etc/firmware/audience-es325-fw.bin # not available iuni u3
