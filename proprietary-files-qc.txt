@@ -26,7 +26,7 @@ vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
--vendor/lib/libqct_resampler.so
+#-vendor/lib/libqct_resampler.so # not available iuni u3
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -43,20 +43,20 @@ etc/firmware/venus.mdt
 # DRM
 bin/qseecomd
 lib/libQSEEComAPI.so:vendor/lib/libQSEEComAPI.so
-lib/libdrmdecrypt.so
+#lib/libdrmdecrypt.so # not available on iuni u3
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib/libwvdrm_L3.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
+#vendor/lib/libwvdrm_L3.so # not available on iuni u3
+#vendor/lib/libwvm.so # not available on iuni u3
+#vendor/lib/libWVStreamControlAPI_L3.so # not available on iuni u3
+#vendor/lib/drm/libdrmwvmplugin.so # not available on iuni u3
+#vendor/lib/mediadrm/libwvdrmengine.so # not available on iuni u3
 
 # GPS
--priv-app/com.qualcomm.location.apk
+#-priv-app/com.qualcomm.location.apk # not available on iuni u3
 bin/gsiff_daemon
 bin/quipc_igsn
 bin/quipc_main
@@ -176,7 +176,7 @@ vendor/lib/liblistenhardware.so
 vendor/lib/liblistenjni.so
 -vendor/lib/liblisten.so
 vendor/lib/liblistensoundmodel.so
-vendor/lib/liblistensoundmodel2.so
+#vendor/lib/liblistensoundmodel2.so # not available on iuni u3
 
 # QuickBoot
 -app/QuickBoot.apk
@@ -185,4 +185,4 @@ vendor/lib/liblistensoundmodel2.so
 bin/hvdcp
 
 # WiFi
-lib/libwcnss_qmi.so
+#lib/libwcnss_qmi.so # not available on iuni u3
