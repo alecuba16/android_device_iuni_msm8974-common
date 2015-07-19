@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \\
 PRODUCT_PACKAGES += \\
     libHevcSwDecoder \\
     libmm-abl \\
-    libqct_resampler \\
+    #libqct_resampler \\ #not available iuni u3
     libtime_genoff \\
     libTimeService \\
     TimeService
@@ -195,11 +195,11 @@ PRODUCT_PACKAGES += \\
 PRODUCT_PACKAGES += \\
     libscale \\
 
-PRODUCT_PACKAGES += \\
-    libwvdrmengine \\
-    libwvdrm_L3 \\
-    libwvm \\
-    libWVStreamControlAPI_L3
+#PRODUCT_PACKAGES += \\
+   #  libwvdrmengine \\ # not available iuni u3
+   # libwvdrm_L3 \\ # not available iuni u3
+   # libwvm \\ # not available iuni u3
+   # libWVStreamControlAPI_L3 # not available iuni u3
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -246,16 +246,17 @@ ifeq (\$(TARGET_BOARD_PLATFORM),msm8974)
 
 ifeq (\$(QCPATH),)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := com.qualcomm.location
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/priv-app/com.qualcomm.location.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-LOCAL_PRIVILEGED_MODULE := true
-include \$(BUILD_PREBUILT)
+# not available iuni u3
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := com.qualcomm.location
+#LOCAL_MODULE_OWNER := $VENDOR
+#LOCAL_SRC_FILES := proprietary/priv-app/com.qualcomm.location.apk
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+#LOCAL_MODULE_CLASS := APPS
+#LOCAL_CERTIFICATE := platform
+#LOCAL_PRIVILEGED_MODULE := true
+#include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := qcrilmsgtunnel
@@ -317,15 +318,16 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include \$(BUILD_PREBUILT)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libqct_resampler
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/vendor/lib/libqct_resampler.so
-LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-include \$(BUILD_PREBUILT)
+#not available iuni u3
+#include \$(CLEAR_VARS)
+#LOCAL_MODULE := libqct_resampler
+#LOCAL_MODULE_OWNER := $VENDOR
+#LOCAL_SRC_FILES := proprietary/vendor/lib/libqct_resampler.so
+#LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE_SUFFIX := .so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff
